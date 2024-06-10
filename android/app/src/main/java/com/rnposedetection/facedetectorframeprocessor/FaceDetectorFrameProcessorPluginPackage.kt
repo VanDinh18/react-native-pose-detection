@@ -5,6 +5,7 @@ import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.uimanager.ViewManager
 import com.mrousavy.camera.frameprocessors.FrameProcessorPluginRegistry
+import com.rnposedetection.views.PoseOverlayManager
 
 class FaceDetectorFrameProcessorPluginPackage : ReactPackage {
   companion object {
@@ -20,6 +21,6 @@ class FaceDetectorFrameProcessorPluginPackage : ReactPackage {
   }
 
   override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-    return emptyList()
+    return listOf(PoseOverlayManager())
   }
 }
